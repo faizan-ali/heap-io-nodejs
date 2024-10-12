@@ -6,7 +6,7 @@
 		"email": "faizanali619@gmail.com",
 		"website": "https://faizanali.com"
 	},
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A Node.js client for Heap.io",
 	"keywords": [
 		"heap",

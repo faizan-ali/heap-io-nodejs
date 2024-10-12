@@ -3,7 +3,7 @@ A simple wrapper around the Heap.io API for Node.js. This lets you track server-
 
 Strongly typed with TypeScript.
 
-https://developers.heap.io/reference/server-side-apis-overview
+See API docs here: https://developers.heap.io/reference/server-side-apis-overview
 
 ## Prerequisites
 - Node.js 20 or later
@@ -52,3 +52,7 @@ npm install heap-io-node
   }
 })();
 ```
+
+## Constructor Options
+- `appId` (string): Your Heap.io App ID. Required.
+- `logger` (Logger): A logger instance if you want to pass your own custom logger. Optional. Default: `console`.

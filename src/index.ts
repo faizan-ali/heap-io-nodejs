@@ -1,9 +1,10 @@
 import axios from 'axios'
 
 interface HeapEvent {
-	identity?: string
+	// The docs say this is not required but the API returns a 400 if not provided.
+	identity: string
 	properties?: Record<string, any>
-	// Unix timestamp in milliseconds
+	// Unix timestamp in milliseconds.
 	timestamp?: number
 }
 
@@ -25,7 +26,7 @@ interface AddUserPropertiesRequestBody {
 	properties: Record<string, any>
 }
 
-// The Heap API does not currently return any content on success
+// The Heap API does not currently return any content on success.
 type HeapSuccessResponse = {}
 
 interface HeapErrorResponse {
