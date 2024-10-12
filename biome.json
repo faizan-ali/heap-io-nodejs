@@ -21,7 +21,9 @@
 		"rules": {
 			"recommended": true,
 			"suspicious": {
-				"noExplicitAny": false
+				"noExplicitAny": {
+					"level": "warn"
+				}
 			}
 		}
 	},
