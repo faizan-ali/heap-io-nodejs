@@ -1,0 +1,39 @@
+{
+  "name": "heap-io-nodejs",
+  "license": "MIT",
+  "author": {
+    "name": "Faizan Ali",
+    "email": "faizanali619@gmail.com",
+    "website": "https://faizanali.com"
+  },
+  "version": "0.0.1",
+  "description": "A Node.js client for Heap.io",
+  "keywords": [
+    "heap",
+    "analytics",
+    "client",
+    "heap client",
+    "heap.io",
+    "heap node.js",
+    "heap nodejs"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "lint:fix": "npx @biomejs/biome format --write "
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.3",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^22.7.5",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
+}
