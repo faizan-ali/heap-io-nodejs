@@ -10,7 +10,7 @@ See API docs here: https://developers.heap.io/reference/server-side-apis-overvie
 
 ## Installation
 ```shell
-npm install heap-io-node
+npm install heap-io-nodejs
 ```
 
 ## Usage
