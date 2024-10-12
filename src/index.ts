@@ -2,14 +2,12 @@ import axios from 'axios'
 
 interface HeapEvent {
 	identity?: string
-	event: string
 	properties?: Record<string, any>
 	// Unix timestamp in milliseconds
 	timestamp?: number
 }
 
 interface HeapUserProperties {
-	identity: string
 	properties: Record<string, any>
 }
 
@@ -56,10 +54,12 @@ export class Heap {
 
 	/**
 	 * Tracks an event in Heap.
+	 * @param event - The name of the event you are tracking in Heap.
 	 * @param eventData - Data related to the event.
 	 * @returns AxiosResponse containing the success response.
 	 */
 	async track(
+		event: string,
 		eventData: HeapEvent
 	): Promise<axios.AxiosResponse<HeapSuccessResponse>> {
 		const url = '/track'
@@ -67,7 +67,7 @@ export class Heap {
 		const data: TrackRequestBody = {
 			app_id: this.appId,
 			identity: eventData.identity,
-			event: eventData.event,
+			event,
 			properties: eventData.properties,
 			timestamp: eventData.timestamp
 		}
@@ -97,17 +97,19 @@ export class Heap {
 
 	/**
 	 * Adds properties to a user in Heap.
+	 * @param identity - The identity of the user, should be a unique identifier.
 	 * @param userProperties - Properties to add to the user.
 	 * @returns AxiosResponse containing the success response.
 	 */
 	async addUserProperties(
+		identity: string,
 		userProperties: HeapUserProperties
 	): Promise<axios.AxiosResponse<HeapSuccessResponse>> {
 		const url = '/add_user_properties'
 
 		const data: AddUserPropertiesRequestBody = {
 			app_id: this.appId,
-			identity: userProperties.identity,
+			identity,
 			properties: userProperties.properties
 		}
 
